@@ -11,9 +11,6 @@ import com.example.diploma.dayduty.domain.model.repository.DataSourceImpl
 import com.example.diploma.map.data.MapDatabase
 import com.example.diploma.map.data.repository.MapDataSource
 import com.example.diploma.map.data.repository.MapDataSourceImpl
-import com.example.diploma.statistics.StatisticsDataSource
-import com.example.diploma.statistics.StatisticsDataSourceImpl
-import com.example.diploma.statistics.StatisticsDatabase
 import com.example.diploma.util.Constants.ANIMALS_DATABASE
 import com.example.diploma.util.Constants.DAY_DUTIES_DATABASE
 import com.example.diploma.util.Constants.MAP_CROP_TABLE
@@ -66,17 +63,17 @@ object DatabaseModule {
         ).fallbackToDestructiveMigration().build()
     }
 
-    @Provides
-    @Singleton
-    fun provideStatisticsDatabase(
-        @ApplicationContext context: Context
-    ): StatisticsDatabase{
-        return Room.databaseBuilder(
-            context,
-            StatisticsDatabase::class.java,
-            STATISTICS_DATABASE
-        ).fallbackToDestructiveMigration().build()
-    }
+//    @Provides
+//    @Singleton
+//    fun provideStatisticsDatabase(
+//        @ApplicationContext context: Context
+//    ): StatisticsDatabase{
+//        return Room.databaseBuilder(
+//            context,
+//            StatisticsDatabase::class.java,
+//            STATISTICS_DATABASE
+//        ).fallbackToDestructiveMigration().build()
+//    }
 
     @Provides
     @Singleton
@@ -108,13 +105,13 @@ object DatabaseModule {
         )
     }
 
-    @Provides
-    @Singleton
-    fun provideStatisticsDataSource(
-        database: StatisticsDatabase
-    ): StatisticsDataSource {
-        return StatisticsDataSourceImpl (
-            statisticsDatabase = database
-        )
-    }
+//    @Provides
+//    @Singleton
+//    fun provideStatisticsDataSource(
+//        database: StatisticsDatabase
+//    ): StatisticsDataSource {
+//        return StatisticsDataSourceImpl (
+//            statisticsDatabase = database
+//        )
+//    }
 }

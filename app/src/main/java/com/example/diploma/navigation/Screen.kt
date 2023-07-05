@@ -2,7 +2,7 @@ package com.example.diploma.navigation
 
 import com.example.diploma.R
 import com.example.diploma.animals.AnimalList
-import com.example.diploma.util.toJson
+
 
 sealed class Screen(val route: String , val name:String, var icon:Int){
     object Calendar: Screen("calendar_screen", "Calendar", R.drawable.calendar)

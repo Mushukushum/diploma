@@ -21,7 +21,6 @@ fun BottomNavigationBar(
     val bottomNavItems = listOf(
         Screen.Calendar ,
         Screen.Map ,
-        Screen.Statistics ,
         Screen.Animals
     )
     BottomAppBar(

@@ -22,8 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.diploma.map.data.MapCropPolygon
-import com.example.diploma.navigation.Screen
-import com.example.diploma.screens.TabLayout
+
 import com.example.diploma.screens.map.MapViewModel
 import com.example.diploma.ui.theme.LARGE_PADDING
 import com.example.diploma.ui.theme.Purple40
@@ -89,10 +88,7 @@ fun CropsItem(
 
     var showSelectedPlot by remember { mutableStateOf(false) }
     
-    if(showSelectedPlot){
-        TabLayout(tabIndex = 0, )
-    }
-    
+  
     Surface(
         modifier = Modifier
             .fillMaxWidth()
