@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">diploma</string>
+    <string name="calendar">Calendar</string>
+    <string name="day_duties">Day duties</string>
+    <string name="insert_new_day_duty">Insert new day duty</string>
+    <string name="map">Map</string>
+    <string name="statistics">Statistics</string>
+    <string name="select_first_field">Оберіть культуру для посіву</string>
+    <string name="select_second_field">Оберіть попередника</string>
+</resources>
