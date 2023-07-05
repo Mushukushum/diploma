@@ -30,7 +30,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.diploma.animals.AnimalList
 import com.example.diploma.navigation.Screen
-import com.example.diploma.screens.DropdownState
+import com.example.diploma.screens.map.DropdownState
 import com.example.diploma.ui.theme.LARGE_PADDING
 import com.example.diploma.ui.theme.Purple40
 import com.google.firebase.database.FirebaseDatabase

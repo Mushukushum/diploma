@@ -14,6 +14,7 @@ import com.example.diploma.screens.animals.InsertNewAnimal
 import com.example.diploma.screens.day_duties.InsertNewDayDuty
 import com.example.diploma.screens.day_duties.ListOfDayDutiesScreen
 import com.example.diploma.screens.day_duties.Plants
+import com.example.diploma.screens.map.MapScreen
 import java.time.LocalDate
 
 @Composable
@@ -54,11 +55,6 @@ fun SetupNavGraph(navController:NavHostController){
         ){
             MapScreen()
         }
-//        composable(
-//            route = Screen.Statistics.route
-//        ){
-//            StatisticsTabLayout(navController = navController)
-//        }
         composable(
             route = Screen.Plants.route
         ){
@@ -69,11 +65,6 @@ fun SetupNavGraph(navController:NavHostController){
         ){
             AnimalsScreen(navController = navController)
         }
-//        composable(
-//            route = Screen.Farm.route
-//        ){
-//            Household(navController = navController)
-//        }
         composable(
             route = Screen.AddNewAnimalType.route,
             arguments = listOf(navArgument("item"){
@@ -85,12 +76,5 @@ fun SetupNavGraph(navController:NavHostController){
                 InsertNewAnimal(navController = navController, listOfAnimals = animal)
             }
         }
-
-//        composable(route = Screen.FinanceStatistics.route){
-//            AddFinancesInformation(navController = navController)
-//        }
-//        composable(route = Screen.FormForCropsStatistics.route){
-//            AddCropsStatistics(navController = navController)
-//        }
     }
 }

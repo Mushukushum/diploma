@@ -15,14 +15,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.diploma.map.data.MapCropPolygon
-
 import com.example.diploma.screens.map.MapViewModel
 import com.example.diploma.ui.theme.LARGE_PADDING
 import com.example.diploma.ui.theme.Purple40
@@ -76,7 +74,6 @@ fun Plants(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CropsItem(
     currentCulture: String,
@@ -88,7 +85,7 @@ fun CropsItem(
 
     var showSelectedPlot by remember { mutableStateOf(false) }
     
-  
+
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -112,7 +109,7 @@ fun CropsItem(
             Column(modifier = Modifier
                 .weight(0.6f)
                 .padding(start = 12.dp)) {
-                Row() {
+                Row {
                     Text("Поточна культура: ", fontSize = 12.sp)
                     Text(
                         text = currentCulture ,
@@ -121,7 +118,7 @@ fun CropsItem(
                         textAlign = TextAlign.Center
                     )
                 }
-                Row() {
+                Row {
                     Text("Попередник: ", fontSize = 12.sp)
                     Text(
                         text = previousCulture ,
@@ -132,7 +129,7 @@ fun CropsItem(
                 }
             }
             
-            Column() {
+            Column {
                 Text("ІВҐ")
                 Text(
                     text = index.toString()

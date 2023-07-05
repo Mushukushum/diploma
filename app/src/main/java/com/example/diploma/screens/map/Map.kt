@@ -1,4 +1,4 @@
-package com.example.diploma.screens
+package com.example.diploma.screens.map
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,7 +19,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.diploma.R
 import com.example.diploma.map.data.MapCropPolygon
-import com.example.diploma.screens.map.MapViewModel
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.database.FirebaseDatabase
@@ -35,7 +34,6 @@ fun MapScreen(
 ) {
 
     val listOfDots = remember { mutableStateListOf<LatLng>() }
-    var count = 0
     var drawPolygon = false
 
     var selectedPolygon by remember { mutableStateOf<MapCropPolygon?>(null) }
@@ -47,8 +45,6 @@ fun MapScreen(
     val refreshMarkers = {
         val centerLocation = cameraPositionState.position.target
         val topLeftLocation = cameraPositionState.projection?.visibleRegion?.farLeft ?: cameraPositionState.position.target
-        val radius = SphericalUtil.computeDistanceBetween(topLeftLocation, centerLocation)
-        //viewModel.stationsWithin(centerLocation.latitude, centerLocation.longitude, radius)
     }
 
     if (cameraPositionState.isMoving) {
@@ -64,7 +60,7 @@ fun MapScreen(
         mutableStateOf(false) }
     val dismissDialog = { showDialog = false }
 
-    var cropToUpdateData by remember {
+    val cropToUpdateData by remember {
         mutableStateOf(MapCropPolygon(
             id = 0,
             coordinates = listOf(),
